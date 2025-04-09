@@ -3,7 +3,7 @@ return function()
 	local clear = {}
 
 	require("modules.utils").load_plugin("catppuccin", {
-		background = { light = "latte", dark = "mocha" }, -- latte, frappe, macchiato, mocha
+		background = { light = "latte", dark = "macchiato" }, -- latte, frappe, macchiato, mocha
 		dim_inactive = {
 			enabled = false,
 			-- Dim inactive splits/windows/buffers.
@@ -67,7 +67,7 @@ return function()
 			rainbow_delimiters = true,
 			render_markdown = true,
 			semantic_tokens = true,
-			telescope = { enabled = true, style = "nvchad" },
+			-- telescope = { enabled = true, style = "nvchad" },
 			treesitter = true,
 			treesitter_context = true,
 			which_key = true,
@@ -79,10 +79,10 @@ return function()
 				return {
 					-- For base configs
 					NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
-					FloatBorder = {
-						fg = transparent_background and cp.blue or cp.mantle,
-						bg = transparent_background and cp.none or cp.mantle,
-					},
+					-- FloatBorder = {
+					-- 	fg = transparent_background and cp.blue or cp.mantle,
+					-- 	bg = transparent_background and cp.none or cp.mantle,
+					-- },
 					CursorLineNr = { fg = cp.green },
 
 					-- For native lsp configs

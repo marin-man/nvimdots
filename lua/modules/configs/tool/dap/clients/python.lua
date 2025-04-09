@@ -70,5 +70,18 @@ return function()
 				end
 			end,
 		},
+		{
+			type = "python",
+			request = "attach",
+			name = "Attach to Process",
+			connect = {
+				host = function()
+					return vim.fn.input("Enter host: ")
+				end,
+				port = function()
+					return vim.fn.input("Enter port number: ")
+				end,
+			},
+		},
 	}
 end

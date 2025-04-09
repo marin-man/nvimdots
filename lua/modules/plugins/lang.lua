@@ -46,4 +46,9 @@ lang["chrisbra/csv.vim"] = {
 	lazy = true,
 	ft = "csv",
 }
+lang["Shatur/neovim-cmake"] = {
+	lazy = true,
+	cmd = { "CMake" },
+	config = require("lang.cmake"),
+}
 return lang

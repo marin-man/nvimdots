@@ -31,18 +31,24 @@ local mappings = {
 
 		-- Plugin: toggleterm
 		["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]):with_noremap():with_silent(), -- switch to normal mode in terminal.
-		["n|<C-\\>"] = map_cr("ToggleTerm direction=horizontal")
+		["n|<C-1>"] = map_cr("ToggleTerm direction=horizontal")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle horizontal"),
-		["i|<C-\\>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=horizontal<CR>")
+		["i|<C-1>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=horizontal<CR>")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle horizontal"),
-		["t|<C-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>")
+		["t|<C-1>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
+		["n|<C-\\>"] = map_cr("ToggleTerm direction=float")
 			:with_noremap()
 			:with_silent()
-			:with_desc("terminal: Toggle horizontal"),
+			:with_desc("terminal: Toggle float"),
+		["i|<C-\\>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>")
+			:with_noremap()
+			:with_silent()
+			:with_desc("terminal: Toggle float"),
+		["t|<C-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
 		["n|<A-\\>"] = map_cr("ToggleTerm direction=vertical")
 			:with_noremap()
 			:with_silent()
@@ -150,43 +156,43 @@ local mappings = {
 			:with_desc("tool: Miscellaneous"),
 
 		-- Plugin: dap
-		["n|<F6>"] = map_callback(function()
+		["n|<leader>dr"] = map_callback(function()
 				require("dap").continue()
 			end)
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Run/Continue"),
-		["n|<F7>"] = map_callback(function()
+		["n|<leader>ds"] = map_callback(function()
 				require("dap").terminate()
 			end)
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Stop"),
-		["n|<F8>"] = map_callback(function()
+		["n|<leader>db"] = map_callback(function()
 				require("dap").toggle_breakpoint()
 			end)
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Toggle breakpoint"),
-		["n|<F9>"] = map_callback(function()
+		["n|<leader>di"] = map_callback(function()
 				require("dap").step_into()
 			end)
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Step into"),
-		["n|<F10>"] = map_callback(function()
+		["n|<leader>do"] = map_callback(function()
 				require("dap").step_out()
 			end)
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Step out"),
-		["n|<F11>"] = map_callback(function()
+		["n|<leader>dn"] = map_callback(function()
 				require("dap").step_over()
 			end)
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Step over"),
-		["n|<leader>db"] = map_callback(function()
+		["n|<leader>dbs"] = map_callback(function()
 				require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
 			end)
 			:with_noremap()
@@ -204,7 +210,7 @@ local mappings = {
 			:with_noremap()
 			:with_silent()
 			:with_desc("debug: Run last"),
-		["n|<leader>do"] = map_callback(function()
+		["n|<leader>dor"] = map_callback(function()
 				require("dap").repl.open()
 			end)
 			:with_noremap()

@@ -57,6 +57,13 @@ return function()
 						end,
 					},
 					{
+						name = "World in buffer",
+						tele_func = function(opts)
+							opts = opts or {}
+							builtin.current_buffer_fuzzy_find()
+						end,
+					},
+					{
 						name = "Word under cursor",
 						tele_func = function(opts)
 							opts = opts or {}

@@ -137,4 +137,18 @@ tool["mfussenegger/nvim-dap"] = {
 	},
 }
 
+----------------------------------------------------------------------
+--                      Codeverse Plugins                           --
+----------------------------------------------------------------------
+
+tool["codeverse"] = {
+	"git@code.byted.org:chenjiaqi.cposture/codeverse.vim.git",
+	dependencies = {
+		"hrsh7th/nvim-cmp",
+	},
+	config = function()
+		require("marscode").setup({})
+	end,
+}
+
 return tool

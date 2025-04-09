@@ -69,6 +69,23 @@ completion["hrsh7th/nvim-cmp"] = {
 		-- 	},
 		-- 	config = require("completion.codeium"),
 		-- },
+		opts = function(_, opts)
+			-- 清空默认 sources，由自己配置
+			opts.sources = {}
+			-- insert 顺序决定展示顺序，数组末尾的展示在后
+			-- group_index 决定是否为同组，当同组都没有补全项，下一组进行兜底展示
+			-- marscode 排在首位
+			table.insert(opts.sources, {
+				name = "marscode",
+				group_index = 1,
+			})
+			-- 继续添加其他 source ...
+
+			-- 开启类似 copilot 一样的虚拟文本
+			table.insert(opts.experimental, {
+				ghost_text = true,
+			})
+		end,
 	},
 }
 if use_copilot then
